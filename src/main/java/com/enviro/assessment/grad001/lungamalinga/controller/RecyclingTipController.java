@@ -1,6 +1,6 @@
 package com.enviro.assessment.grad001.lungamalinga.controller;
 
-import com.enviro.assessment.grad001.lungamalinga.model.RecyclingTip;
+import com.enviro.assessment.grad001.lungamalinga.model.RecyclingTips;
 import com.enviro.assessment.grad001.lungamalinga.repo.RecyclingTipRepo;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +18,7 @@ public class RecyclingTipController {
 
     // return/get all recycling tips
     @GetMapping
-    public Iterable<RecyclingTip> getAllTips(){
+    public Iterable<RecyclingTips> getAllTips(){
         return tipRepo.findAll();
     }
 
