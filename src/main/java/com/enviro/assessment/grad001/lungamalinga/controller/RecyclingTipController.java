@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
 @RestController
 @RequestMapping("/get/tips")
 public class RecyclingTipController {
@@ -16,11 +15,9 @@ public class RecyclingTipController {
         this.tipRepo = tipRepo;
     }
 
-    // return/get all recycling tips
+    // GET all recycling tips
     @GetMapping
-    public Iterable<RecyclingTips> getAllTips(){
+    public Iterable<RecyclingTips> getAllTips() {
         return tipRepo.findAll();
     }
-
-    // TODO: START HERE... @PostMapping
 }
