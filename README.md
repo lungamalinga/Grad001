@@ -1,16 +1,35 @@
-GRAD001 - LUNGAMALINGA - ASSESSMENT PROJECT
+# GRAD001 - LUNGAMALINGA - ASSESSMENT PROJECT
 
-# Routes
-GET
-* Get ALL the recycling tips
-> /get/tips
+# URL
+> URL : http://localhost:8080
 
-* Get ALL disposal guidelines
-> /get/disposalguidelines
- 
-* Get ALL waste categories
-> /get/wastecategories
+# END POINTS: 
 
-<br>
-**TODO: POST REQUESTS | DELETE EDIT**
-POST
+# GET ALL RECYCLING TIPS [GET REQUEST]
+> /tips/all
+
+# GET ONE Tip by ID [tip id is an integer]
+> tips/{tip_id}
+
+# SAVE/CREATE NEW TIP [POST REQUEST]
+> /tips/save/tip
+>   <br> request body [example]:  
+    { "category_id": 12, "tip_description": "Dont litter on the floor - PLEASE!!!" }
+
+# DELETE TIP [POST REQUEST]
+> /tips/delete/tip
+<br> body example: { "tip_id": 9 }
+
+# UPDATE A TIP RECORD
+> tips/update/tip
+<br> body example: {"tip_id": 2,"category_id": 44,"tip_description": "my name is lunga malinga"}
+
+
+
+
+
+
+
+
+
+
