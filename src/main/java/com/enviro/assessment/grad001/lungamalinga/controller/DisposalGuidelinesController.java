@@ -17,7 +17,7 @@ public class DisposalGuidelinesController {
     }
 
     // GET ALL DISPOSAL GUIDELINES
-    @GetMapping
+    @GetMapping("/all")
     public Iterable<DisposalGuidelines> getAllDisposalGuidelines(){
         return disposalGuidelinesRepo.findAll();
     }
@@ -65,4 +65,48 @@ public class DisposalGuidelinesController {
         return responseObject;
 
     }
+
+    // save/ add new disposal guideline
+    @PostMapping("/save/disposalguideline")
+    public LinkedHashMap saveDisposalGuideline(@RequestBody LinkedHashMap body){
+        LinkedHashMap responseObject = new LinkedHashMap();
+        TimeController timestamp = new TimeController();
+
+        try {
+            int category_id = (int) body.get("category_id");
+            String instructions = (String) body.get("instructions");
+            // save data to to db disposal guidelines table
+            disposalGuidelinesRepo.save(new DisposalGuidelines(null, category_id, instructions, timestamp.getFormattedNow()));
+        } catch (Exception e){
+            responseObject.put("success", false);
+            responseObject.put("message", "Failed to create disposal guideline record");
+            responseObject.put("full error message", e.getMessage());
+            return responseObject;
+        }
+        responseObject.put("success", true);
+        responseObject.put("message", "successfully created the record [disposal guideline] ");
+        return responseObject;
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
