@@ -5,24 +5,32 @@
 
 # END POINTS: 
 
+[//]: # (tips)
 # GET ALL RECYCLING TIPS [GET REQUEST]
-> /tips/all
+> _**/tips/all**_
 
 # GET ONE Tip by ID [tip id is an integer]
-> tips/{tip_id}
+> _**tips/{tip_id}**_
 
 # SAVE/CREATE NEW TIP [POST REQUEST]
-> /tips/save/tip
+> _**/tips/save/tip**_
 >   <br> request body [example]:  
-    { "category_id": 12, "tip_description": "Dont litter on the floor - PLEASE!!!" }
+    _{ "category_id": 12, "tip_description": "Dont litter on the floor - PLEASE!!!" }_
 
 # DELETE TIP [POST REQUEST]
-> /tips/delete/tip
-<br> body example: { "tip_id": 9 }
+> **_/tips/delete/tip_**
+<br> body example: _{ "tip_id": 9 }_
 
 # UPDATE A TIP RECORD
-> tips/update/tip
+> **_tips/update/tip_**
 <br> body example: {"tip_id": 2,"category_id": 44,"tip_description": "my name is lunga malinga"}
+
+[//]: # (disposal guidelines)
+# GET ALL DISPOSAL GUIDELINES
+> **_/disposalguidelines_**
+
+# GET ONE DISPOSAL GUIDELINES BY ID [id is an integer]
+> /disposalguidelines/{id}
 
 
 
