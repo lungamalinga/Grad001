@@ -38,11 +38,13 @@
 > _**/disposalguidelines/delete/disposalguideline**_
 <br> body exampl: { "id": 1}
 
-### save
+### save disposal guideline [post request]
 > **_/disposalguidelines/save/disposalguideline_**
 <br> body example: _{"category_id": 2,"instructions": "Be good to the environment"}_
 
-### update
+### update dissposal guideline [post request]
+> **_/disposalguidelines/update/disposalguideline_**
+<br> body example: {"id": 1,"category_id": 9510,"instructions": "fight global warming with your hands."}
 
 
 
