@@ -1,16 +1,16 @@
 # GRAD001 - LUNGAMALINGA - ASSESSMENT PROJECT
 
+
 # URL
 > URL : http://localhost:8080
 
-# END POINTS: 
+# ************** RECYCLING TIPS *********** 
 
-[//]: # (tips)
 # GET ALL RECYCLING TIPS [GET REQUEST]
 > _**/tips/all**_
 
 # GET ONE Tip by ID [tip id is an integer]
-> _**tips/{tip_id}**_
+> _**/tips/{tip_id}**_
 
 # SAVE/CREATE NEW TIP [POST REQUEST]
 > _**/tips/save/tip**_
@@ -21,17 +21,22 @@
 > **_/tips/delete/tip_**
 <br> body example: _{ "tip_id": 9 }_
 
-# UPDATE A TIP RECORD
-> **_tips/update/tip_**
+# UPDATE A TIP RECORD [POST REQUEST]
+> **_/tips/update/tip_**
 <br> body example: {"tip_id": 2,"category_id": 44,"tip_description": "my name is lunga malinga"}
 
-[//]: # (disposal guidelines)
-# GET ALL DISPOSAL GUIDELINES
+
+# ************** DISPOSAL GUIDELINES ***********
+### GET ALL DISPOSAL GUIDELINES [GET REQUEST]
 > **_/disposalguidelines_**
 
-# GET ONE DISPOSAL GUIDELINES BY ID [id is an integer]
+## GET ONE DISPOSAL GUIDELINES BY ID [id is an integer]
 > /disposalguidelines/{id}
 
+
+## DELETE DISPOSAL GUIDELINE BY ID [POST REQUEST]
+> _**/disposalguidelines/delete/disposalguideline**_
+> body exampl: { "id": 1}
 
 
 

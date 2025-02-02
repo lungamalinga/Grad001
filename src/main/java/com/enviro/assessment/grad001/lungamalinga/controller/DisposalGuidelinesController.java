@@ -2,10 +2,7 @@ package com.enviro.assessment.grad001.lungamalinga.controller;
 
 import com.enviro.assessment.grad001.lungamalinga.model.DisposalGuidelines;
 import com.enviro.assessment.grad001.lungamalinga.repo.DisposalGuidelinesRepo;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.LinkedHashMap;
 import java.util.Optional;
@@ -38,5 +35,34 @@ public class DisposalGuidelinesController {
         }
 
         return  disposalGuidelinesRepo.findById(id);
+    }
+
+    // DELETE DISPOSAL GUIDELINE BY ID
+    @PostMapping("/delete/disposalguideline")
+    public LinkedHashMap removeDisposalGuidelineById(@RequestBody LinkedHashMap body){
+        LinkedHashMap responseObject = new LinkedHashMap( );
+        int disposalId;
+
+        try {
+            disposalId = (int) body.get("id");
+            if ( disposalGuidelinesRepo.existsById(disposalId) ){
+                System.out.println( "Deleting Tip :: " + disposalId);
+                disposalGuidelinesRepo.deleteById( disposalId );
+            } else {
+                responseObject.put("success", false);
+                responseObject.put("message", "Disposal guideline ID don't exists.");
+                return responseObject;
+            }
+
+        }catch (Exception e){
+            responseObject.put("success", false);
+            responseObject.put("message", e.getMessage());
+            return responseObject;
+        }
+
+        responseObject.put("success", true);
+        responseObject.put("message", "successfully deleted record ["+disposalId+"]");
+        return responseObject;
+
     }
 }

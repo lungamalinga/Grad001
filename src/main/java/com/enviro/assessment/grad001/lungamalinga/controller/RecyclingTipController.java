@@ -47,11 +47,11 @@ public class RecyclingTipController {
             tipId = (int) body.get("tip_id");
 
             if (tipRepo.existsById(tipId)){
-                System.out.println( "tip id :: " + tipId);
+                System.out.println( "Deleting Tip :: " + tipId);
                 tipRepo.deleteById( tipId );
             } else {
                 responseObject.put("success", false);
-                responseObject.put("message", "Tip [id] don't exists.");
+                responseObject.put("message", "Tip ID don't exists.");
                 return responseObject;
             }
         }catch (Exception e){
