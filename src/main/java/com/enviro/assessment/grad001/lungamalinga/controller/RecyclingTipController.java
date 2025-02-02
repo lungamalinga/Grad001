@@ -2,7 +2,6 @@ package com.enviro.assessment.grad001.lungamalinga.controller;
 
 import com.enviro.assessment.grad001.lungamalinga.model.RecyclingTips;
 import com.enviro.assessment.grad001.lungamalinga.repo.RecyclingTipRepo;
-import org.springframework.data.annotation.Id;
 import org.springframework.web.bind.annotation.*;
 import java.util.LinkedHashMap;
 import java.util.Optional;
@@ -44,7 +43,7 @@ public class RecyclingTipController {
         LinkedHashMap responseObject = new LinkedHashMap();
         int tipId;
         try {
-            tipId = (int) body.get("tip_id");
+            tipId = (int) body.get("id");
 
             if (tipRepo.existsById(tipId)){
                 System.out.println( "Deleting Tip :: " + tipId);
@@ -95,7 +94,7 @@ public class RecyclingTipController {
 
         try {
 
-            tipId = (int) body.get("tip_id");
+            tipId = (int) body.get("id");
 
 //            check if id exists before proceeding
             if (!tipRepo.existsById(tipId)) {

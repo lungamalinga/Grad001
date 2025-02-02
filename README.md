@@ -14,16 +14,16 @@
 
 ### SAVE/CREATE NEW TIP [POST REQUEST]
 > _**/tips/save/tip**_
->   <br> request body [example]:  
+>   <br>  body example [id is auto incremented no need to include it]:  
     _{ "category_id": 12, "tip_description": "Dont litter on the floor - PLEASE!!!" }_
 
 ### DELETE TIP [POST REQUEST]
 > **_/tips/delete/tip_**
-<br> body example: _{ "tip_id": 9 }_
+<br> body example: _{ "id": 9 }_
 
 ### UPDATE A TIP RECORD [POST REQUEST]
 > **_/tips/update/tip_**
-<br> body example: {"tip_id": 2,"category_id": 44,"tip_description": "my name is lunga malinga"}
+<br> body example: {"id": 2,"category_id": 44,"tip_description": "my name is lunga malinga"}
 
 
 # ************** DISPOSAL GUIDELINES ***********
@@ -36,13 +36,13 @@
 
 ### DELETE DISPOSAL GUIDELINE BY ID [POST REQUEST]
 > _**/disposalguidelines/delete/disposalguideline**_
-<br> body exampl: { "id": 1}
+<br> body example: { "id": 1}
 
 ### save disposal guideline [post request]
 > **_/disposalguidelines/save/disposalguideline_**
 <br> body example: _{"category_id": 2,"instructions": "Be good to the environment"}_
 
-### update dissposal guideline [post request]
+### update disposal guideline [post request]
 > **_/disposalguidelines/update/disposalguideline_**
 <br> body example: {"id": 1,"category_id": 9510,"instructions": "fight global warming with your hands."}
 
@@ -62,8 +62,8 @@
 <br> body example: {"name": "Category name 101","description": "Plastic waste"}
 
 ### update [post requets]
-> **_update/wastecategory_**
-<br> body example: {"id":1"name": "Category name 101","description": "Plastic waste 101"} 
+> **_/wastecategories/update/wastecategory_**
+<br> body example: {"id":1, "name": "Category name 101","description": "Plastic waste 101"} 
 
 
 
