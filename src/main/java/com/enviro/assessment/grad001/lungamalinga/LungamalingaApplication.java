@@ -26,22 +26,19 @@ public class LungamalingaApplication {
 	}
 
 	/**
-	 * Seed some data [pre-work] [set-starter db records [2 records for each table]]
+	 * Seed some data [pre-work] [set-starter db records [1 records for each table]]
 	 * */
 	@Bean
 	CommandLineRunner cmdLineRunner(RecyclingTipRepo repo, WasteCategoryRepo wasteRepo, DisposalGuidelinesRepo guideRepo){
 		return args -> {
 			// add waste tips
-			repo.save( new RecyclingTips(null, 1, "reduce", formattedNow.getFormattedNow()) );
-			repo.save( new RecyclingTips(null, 2, "reuse", formattedNow.getFormattedNow()) );
+			repo.save( new RecyclingTips(null, 1, "Rinse plastic bottles before recycling.", formattedNow.getFormattedNow()) );
 
 			// add disposal guidelines
-			 guideRepo.save(new DisposalGuidelines( null, 2, "Think about the environment", formattedNow.getFormattedNow() ));
-			 guideRepo.save(new DisposalGuidelines( null, 1, "Pikitup - Puck up the litter", formattedNow.getFormattedNow() ));
+			 guideRepo.save(new DisposalGuidelines( null, 2, "Place plastics in the yellow recycling bin.", formattedNow.getFormattedNow() ));
 
 			// add waste categories
-			wasteRepo.save( new WasteCategories( null, "Reuse", "dont throw away", formattedNow.getFormattedNow() ));
-			wasteRepo.save( new WasteCategories( null, "Reduce", "use less", formattedNow.getFormattedNow() ));
+			wasteRepo.save( new WasteCategories( null, "Plastic", "Includes PET bottles, plastic bags.", formattedNow.getFormattedNow() ));
 		};
 	}
 }
