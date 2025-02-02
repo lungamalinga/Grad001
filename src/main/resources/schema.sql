@@ -1,7 +1,7 @@
 
 CREATE TABLE waste_categories (
     category_id int auto_increment PRIMARY KEY not null,
-    name VARCHAR(100) UNIQUE NOT NULL,
+    name VARCHAR(100) NOT NULL,
     description varchar(255) not null,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );

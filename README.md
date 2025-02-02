@@ -46,7 +46,24 @@
 > **_/disposalguidelines/update/disposalguideline_**
 <br> body example: {"id": 1,"category_id": 9510,"instructions": "fight global warming with your hands."}
 
+# ************** WASTE CATEGORIES ***********
+### Get all 
+> **_/wastecategories/all_**
 
+### Get one by id [id is an integer]
+> **_/wastecategories/{id}_**
+
+### delete by id [post request]
+> **_/wastecategories/delete/wastecategory_**
+<br> body example: {"id": 1}
+
+### save [post request]
+> **_/wastecategories/save/wastecategory_**
+<br> body example: {"name": "Category name 101","description": "Plastic waste"}
+
+### update [post requets]
+> **_update/wastecategory_**
+<br> body example: {"id":1"name": "Category name 101","description": "Plastic waste 101"} 
 
 
 

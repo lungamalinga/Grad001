@@ -86,7 +86,7 @@ public class RecyclingTipController {
         return responseObject;
     }
 
-    // existing update tip
+    // update existing update tip
     @PostMapping("/update/tip")
     public LinkedHashMap updateTipById(@RequestBody LinkedHashMap body){
         LinkedHashMap responseObject = new LinkedHashMap();
